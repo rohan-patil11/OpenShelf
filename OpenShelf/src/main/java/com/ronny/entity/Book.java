@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class Library {
+public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int BookId;
@@ -17,18 +17,18 @@ public class Library {
 	String AuthorName;
 	int BookPrice;
 	
-	public Library() {
+	public Book() {
 		super();
 	}
 	
-	public Library(String bookName, String authorName, int bookPrice) {
+	public Book(String bookName, String authorName, int bookPrice) {
 		super();
 		BookName = bookName;
 		AuthorName = authorName;
 		BookPrice = bookPrice;
 	}
 
-	public Library(int bookId, String bookName, String authorName, int bookPrice) {
+	public Book(int bookId, String bookName, String authorName, int bookPrice) {
 		super();
 		BookId = bookId;
 		BookName = bookName;
