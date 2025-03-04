@@ -1,0 +1,126 @@
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', sans-serif;
+  background-image: url('src/assets/Images/Background Image.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Background now covers full viewport height */
+  animation: backgroundAnimate 10s infinite alternate;
+}
+
+/* Background Animation */
+@keyframes backgroundAnimate {
+  0% { background-position: center top; }
+  100% { background-position: center bottom; }
+}
+
+/* Navigation Menu */
+.menu {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px; /* Increased spacing between menu items */
+  flex-wrap: wrap;
+  position: relative;
+  top: -150px; /* Moves the menu slightly higher */
+}
+
+.menu li {
+  background: rgb(250, 248, 248);
+  padding: 12px 25px; /* Reduced button size while keeping text readable */
+  border-radius: 12px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  font-size: 1.2rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Hover Effects */
+.menu li:hover {
+  transform: rotateY(10deg) scale(1.05);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.7);
+  filter: brightness(1.1);
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #b5713d;
+}
+
+/* Dropdown Menu */
+.submenu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  display: none;
+  min-width: 180px; /* Submenu width remains fixed */
+  text-align: left;
+  padding: 8px 0;
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  border: 3px solid rgba(0, 0, 0, 0.3); /* Slightly thicker border */
+}
+
+/* Slide-in effect on hover */
+.dropdown:hover .submenu {
+  display: block;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Dropdown Items */
+.submenu li {
+  width: 150px; /* Fixed width for items */
+  margin: 6px auto; /* Centers items inside submenu */
+  padding: 10px 16px;
+  transition: background 0.3s;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center; /* Ensures text is centered */
+  align-items: center;
+}
+
+/* Hover Effect for Dropdown */
+.submenu li:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Dropdown */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 20px;
+    top: 0; /* Reset top for mobile view */
+  }
+
+  .submenu {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+
+  .submenu li {
+    padding: 12px;
+  }
+}

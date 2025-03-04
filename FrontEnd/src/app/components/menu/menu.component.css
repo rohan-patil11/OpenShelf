@@ -1,0 +1,128 @@
+/* Header with Background Image */
+.header {
+  background-image: url('src/assets/Images/header-bg.jpg');
+  background-size: cover;
+  padding: 15px 0;
+  transition: 0.3s ease-in-out;
+  z-index: 1000;
+  height: 80px;
+
+  /* Center text vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo as Background Image */
+.logo {
+  width: 250px;  /* Adjust size as needed */
+  height: 150px;  /* Adjust height as needed */
+  background-image: url('src/assets/Images/OpenShelf Logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+/* Site Name */
+.sitename {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+/* Navigation Menu */
+.navmenu {
+  flex: 1; /* Allow it to take available space */
+  display: flex;
+  justify-content: center; /* Center the navigation menu */
+}
+
+.navmenu ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  justify-content: center; /* Ensure the items inside <ul> are centered */
+}
+
+.navmenu a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  padding: 8px 12px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.navmenu a:hover,
+.navmenu .active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Socials */
+.header-social-links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.header-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  color: rgb(17, 0, 0);
+  font-size: 24px;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-social-links a i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Unique Hover Effect */
+.header-social-links a:hover {
+  transform: scale(1.2);
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  box-shadow: 0px 4px 15px rgba(255, 120, 150, 0.5);
+}
+
+.header-social-links a:hover i {
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .navmenu ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 200px;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .navmenu ul.show {
+    display: flex;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    color: white;
+  }
+}
