@@ -25,5 +25,11 @@ public class StudentServices {
 	}
 
 
+	public List<Student> addMultipleStudents(List<Student> list) {
+		studentDao.addMultipleStudents(list);
+		return list;
+	}
+
+
 
 }

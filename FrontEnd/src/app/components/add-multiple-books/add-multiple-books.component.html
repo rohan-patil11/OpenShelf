@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Book List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Book Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books; let i = index">
+        <td><input type="text" [(ngModel)]="book.bookName" placeholder="Enter Book Name"></td>
+        <td><input type="text" [(ngModel)]="book.authorName" placeholder="Enter Author Name"></td>
+        <td><input type="number" [(ngModel)]="book.bookPrice" placeholder="Enter Price"></td>
+        <td><button (click)="removeBook(i)" class="delete-btn">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="addBook()" class="add-btn">Add Book</button><br>
+
+  <button (click)="submitBooks()" class="add-btn">Submit Books</button>
+</div>

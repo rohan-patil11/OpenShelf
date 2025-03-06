@@ -41,8 +41,9 @@ public class BookServices {
 	}
 	
 	
-	public void AddMultipleBooks (List<Book> list){
+	public List<Book> AddMultipleBooks (List<Book> list){
 		bookDao.AddMultipleBooks(list);
+		return list;
 		
 		
 	}

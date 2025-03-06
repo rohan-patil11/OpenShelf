@@ -5,8 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { StudentComponent } from './components/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
-import { BooksComponent } from './components/books/books.component';
-
+import { BooksComponent } from './components/all-books/books.component';
+import { AddMultipleBooksComponent } from './components/add-multiple-books/add-multiple-books.component';
 
 const routes: Routes = [
   {
@@ -28,7 +28,10 @@ const routes: Routes = [
     path:'teacher', component:TeacherComponent
   },
   {
-    path:'books', component:BooksComponent
+    path:'all-books', component:BooksComponent
+  },
+  {
+    path:'add-multiple-books', component:AddMultipleBooksComponent
   }
 ];
 

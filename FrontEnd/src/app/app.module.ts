@@ -13,7 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { StudentComponent } from './components/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
-import { BooksComponent } from './components/books/books.component';
+import { BooksComponent } from './components/all-books/books.component';
+import { AddMultipleBooksComponent } from './components/add-multiple-books/add-multiple-books.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BooksComponent } from './components/books/books.component';
     StudentComponent,
     TeacherComponent,
     BooksComponent,
+    AddMultipleBooksComponent,
   ],
   imports: [
     BrowserModule,

@@ -30,6 +30,11 @@ public class StudentController {
 		List<Student> allStudents = studentServices.getAllStudents();
 		return allStudents;
 	}
+	@PostMapping("addMultipleStudents")
+	public List<Student> addMultipleStudents(List<Student> list){
+		 studentServices.addMultipleStudents(list);
+		 return list;
+	}
 
 
 }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private LoginService:LoginService, private router:Router){
+  constructor(private loginService:LoginService, private router:Router){
 
   }
 username: any;
@@ -22,7 +22,7 @@ const logininfo={
 }
 
 console.log(logininfo)
-this.LoginService.login(logininfo).subscribe((response) => {
+this.loginService.login(logininfo).subscribe((response) => {
   if(response!=null){
     this.router.navigate(['home'])
   }else{

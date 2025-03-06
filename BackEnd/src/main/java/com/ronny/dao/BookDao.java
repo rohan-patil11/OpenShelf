@@ -25,13 +25,17 @@ public class BookDao {
 	}	
 
 	
-	public void AddMultipleBooks(List<Book> list){
+	public List<Book> AddMultipleBooks(List<Book> list){
+		System.out.println("Recieved Data: "+ list);
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
 		for (Book book : list) {
 			session.save(book);
 		}
-		tx.commit();	
+		tx.commit();
+		System.out.println("data saved succesfully");
+
+		return list;
 	}
 
 }

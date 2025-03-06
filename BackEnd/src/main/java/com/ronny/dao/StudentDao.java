@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -28,5 +29,17 @@ public class StudentDao {
 		Criteria criteria = session.createCriteria(Student.class);
 		List<Student> list = criteria.list();
 		return list;	
+	}
+
+
+	public List<Student> addMultipleStudents(List<Student> list) {
+		Session session = factory.openSession();
+		Transaction tx = session.beginTransaction();
+		for (Student student : list) {
+			session.save(student);
+		}
+		tx.commit();
+		return list;
+		
 	}
 }

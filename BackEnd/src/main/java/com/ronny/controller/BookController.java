@@ -20,20 +20,20 @@ public class BookController {
 	@Autowired
 	BookServices bookServices;
 	
-    @PostMapping("/InsertBook")
+    @PostMapping("InsertBook")
 	public void InsertBook(@RequestBody Book book){
     	bookServices.InsertBook(book);
 	}
 	
 	
-	@GetMapping("/FetchOneBook/{BookId}")
+	@GetMapping("FetchOneBook/{BookId}")
 	Book FetchOneBook(@PathVariable int BookId) {
 		Book b1 = bookServices.FetchOneBook(BookId);
 		return b1;
 	}
 	
 	
-	@GetMapping("/FetchAllBooks")
+	@GetMapping("FetchAllBooks")
 	public List<Book> FetchAllBooks() {
 		List<Book> Booklist=bookServices.FetchAllBooks();
 		return Booklist;
@@ -41,8 +41,9 @@ public class BookController {
 	
 	@Autowired
 	BookServices bookservices3;
-	@PostMapping("/AddMultipleBooks")
-	public void AddMultipleBooks(@RequestBody List<Book> list){
-		bookServices.AddMultipleBooks(list);	
+	@PostMapping("AddMultipleBooks")
+	public List<Book> AddMultipleBooks(@RequestBody List<Book> list){
+		bookServices.AddMultipleBooks(list);
+		return list;	
 	}
 }

@@ -1,5 +1,6 @@
 package com.ronny.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,60 +13,74 @@ import org.springframework.stereotype.Component;
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int BookId;
-	String BookName;
-	String AuthorName;
-	int BookPrice;
+	int bookId;
+	
+    @Column(name = "book_name", nullable=false)
+	String bookName;
+    
+    @Column(name = "author_name",nullable=false)
+	String authorName;
+    
+    @Column(name = "book_price",nullable=false)
+	int bookPrice;
 	
 	public Book() {
 		super();
 	}
-	
+
 	public Book(String bookName, String authorName, int bookPrice) {
 		super();
-		BookName = bookName;
-		AuthorName = authorName;
-		BookPrice = bookPrice;
+		this.bookName = bookName;
+		this.authorName = authorName;
+		this.bookPrice = bookPrice;
 	}
 
 	public Book(int bookId, String bookName, String authorName, int bookPrice) {
 		super();
-		BookId = bookId;
-		BookName = bookName;
-		AuthorName = authorName;
-		BookPrice = bookPrice;
+		this.bookId = bookId;
+		this.bookName = bookName;
+		this.authorName = authorName;
+		this.bookPrice = bookPrice;
 	}
 
 	public int getBookId() {
-		return BookId;
+		return bookId;
 	}
+
 	public void setBookId(int bookId) {
-		BookId = bookId;
+		this.bookId = bookId;
 	}
+
 	public String getBookName() {
-		return BookName;
+		return bookName;
 	}
+
 	public void setBookName(String bookName) {
-		BookName = bookName;
+		this.bookName = bookName;
 	}
+
 	public String getAuthorName() {
-		return AuthorName;
+		return authorName;
 	}
+
 	public void setAuthorName(String authorName) {
-		AuthorName = authorName;
+		this.authorName = authorName;
 	}
+
 	public int getBookPrice() {
-		return BookPrice;
+		return bookPrice;
 	}
+
 	public void setBookPrice(int bookPrice) {
-		BookPrice = bookPrice;
+		this.bookPrice = bookPrice;
 	}
 
 	@Override
 	public String toString() {
-		return "Library [BookId=" + BookId + ", BookName=" + BookName + ", AuthorName=" + AuthorName + ", BookPrice="
-				+ BookPrice + "]";
+		return "Book [bookId=" + bookId + ", bookName=" + bookName + ", authorName=" + authorName + ", bookPrice="
+				+ bookPrice + "]";
 	}
+	
 	
 
 }
