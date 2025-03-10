@@ -15,6 +15,9 @@ import { StudentComponent } from './components/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { BooksComponent } from './components/all-books/books.component';
 import { AddMultipleBooksComponent } from './components/add-multiple-books/add-multiple-books.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { AllStudentsComponent } from './components/all-students/all-students.component';
+import { AddStudentComponent } from './components/add-student/add-student.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { AddMultipleBooksComponent } from './components/add-multiple-books/add-m
     TeacherComponent,
     BooksComponent,
     AddMultipleBooksComponent,
+    AddBookComponent,
+    AllStudentsComponent,
+    AddStudentComponent,
   ],
   imports: [
     BrowserModule,

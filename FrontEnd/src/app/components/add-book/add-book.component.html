@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Add One Book</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Book Name</th>
+      <th>Author Name</th>
+      <th>Book Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <td><input type="text" [(ngModel)]="bookName" placeholder="Enter Book Name"></td>
+      <td><input type="text" [(ngModel)]="authorName" placeholder="Enter Author Name"></td>
+      <td><input type="number" [(ngModel)]="bookPrice" placeholder="Enter Price"></td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="addBook()" class="add-btn">Add Book</button><br>
+</div>

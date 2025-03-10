@@ -1,1 +1,21 @@
-<p>books works!</p>
+<div class="container"><br>
+  <h2>List Of All Books</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Book Id</th>
+      <th>Book Name</th>
+      <th>Author Name</th>
+      <th>Book Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list" >
+      <td>{{item.bookId}}</td>
+      <td>{{item.bookName}}</td>
+      <td>{{item.authorName}}</td>
+      <td>{{item.bookPrice}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

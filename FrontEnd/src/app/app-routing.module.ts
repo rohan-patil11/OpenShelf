@@ -7,6 +7,9 @@ import { StudentComponent } from './components/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { BooksComponent } from './components/all-books/books.component';
 import { AddMultipleBooksComponent } from './components/add-multiple-books/add-multiple-books.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { AllStudentsComponent } from './components/all-students/all-students.component';
+import { AddStudentComponent } from './components/add-student/add-student.component';
 
 const routes: Routes = [
   {
@@ -22,7 +25,10 @@ const routes: Routes = [
     path:'user', component:UserComponent
   },
   {
-    path:'student', component:StudentComponent
+    path:'add-student', component:AddStudentComponent
+  },
+  {
+    path:'all-students', component:AllStudentsComponent
   },
   {
     path:'teacher', component:TeacherComponent
@@ -32,6 +38,9 @@ const routes: Routes = [
   },
   {
     path:'add-multiple-books', component:AddMultipleBooksComponent
+  },
+  {
+    path:'add-book', component:AddBookComponent
   }
 ];
 

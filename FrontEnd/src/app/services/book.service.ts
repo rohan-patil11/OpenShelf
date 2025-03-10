@@ -20,4 +20,8 @@ export class BookService {
       return this.http.post(url,books);
 
     }
+    addBook(book:any):Observable<any>{
+      const url="http://localhost:8181/InsertBook";
+      return  this.http.post(url,book);
+    }
 }

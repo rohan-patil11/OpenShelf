@@ -21,8 +21,9 @@ public class BookController {
 	BookServices bookServices;
 	
     @PostMapping("InsertBook")
-	public void InsertBook(@RequestBody Book book){
+	public Book InsertBook(@RequestBody Book book){
     	bookServices.InsertBook(book);
+		return book;
 	}
 	
 	

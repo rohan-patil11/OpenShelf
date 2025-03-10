@@ -18,10 +18,11 @@ public class BookServices {
 	@Autowired
 	SessionFactory factory;
 	
-	public void InsertBook(Book book){
+	public Book InsertBook(Book book){
 		Session session = factory.openSession();
 		session.persist(book);
 		session.beginTransaction().commit();
+		return book;
 		
 	}
 	
