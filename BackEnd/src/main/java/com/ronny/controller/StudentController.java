@@ -20,14 +20,16 @@ public class StudentController {
 	StudentServices studentServices;
 	
 	@PostMapping("addStudent")
-	public void addStudent(@RequestBody Student student) {
-		studentServices.addStudent(student);
+	public Student addStudent(@RequestBody Student student) {
+		Student student2 = studentServices.addStudent(student);
+		return student2;
 	}
 	
 	
 	@GetMapping("getAllStudents")
 	public List<Student> getAllStudents() {
 		List<Student> allStudents = studentServices.getAllStudents();
+		System.out.println(allStudents);
 		return allStudents;
 	}
 	@PostMapping("addMultipleStudents")

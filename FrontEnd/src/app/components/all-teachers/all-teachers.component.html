@@ -1,0 +1,19 @@
+<div class="container"><br>
+  <h2>List Of All Teachers</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Teacher Id</th>
+      <th>Teacher Name</th>
+      <th>Teacher Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list" >
+      <td>{{item.teacherId}}</td>
+      <td>{{item.firstName}}</td>
+      <td>{{item.lastName}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

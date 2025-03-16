@@ -33,10 +33,12 @@ public class UserDao {
 		return list;
 	}
 
-	public void addUser(User user) {
+	public User addUser(User user) {
 		Session session = factory.openSession();
 		session.save(user);
 		session.beginTransaction().commit();
+		return user;
+		
 	}
 
 }

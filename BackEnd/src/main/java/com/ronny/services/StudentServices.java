@@ -14,8 +14,9 @@ public class StudentServices {
 	@Autowired
 	StudentDao studentDao;
 
-	public void addStudent(Student student) {
-		studentDao.addStudent(student);
+	public Student addStudent(Student student) {
+		 Student student2 = studentDao.addStudent(student);
+		 return student2;
 	}
 	
 

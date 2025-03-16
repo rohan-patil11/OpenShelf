@@ -16,7 +16,7 @@
           role="tabpanel"
           aria-labelledby="home-tab"
         >
-          <h3 class="register-heading">Add Student</h3>
+          <h3 class="register-heading">Add User</h3>
           <div class="row register-form">
             <div class="col-md-6">
               <div class="form-group">
@@ -25,43 +25,57 @@
                   class="form-control mb-6"
                   placeholder="First Name *"
                   name="firstName"
-                  [(ngModel)]="firstName"
+                  [(ngModel)]="firstName" required
                 />
               </div>
               <div class="form-group">
                 <input
                   type="text"
                   class="form-control"
+                  placeholder="Username *"
+                  name="username"
+                  [(ngModel)]="username" required
+                />
+              </div>
+              <div class="form-group">
+                <select class="form-control" name="role" [(ngModel)]="role" required>
+                  <option value="" disabled selected>Select a role *</option>
+                  <option value="admin">Admin</option>
+                  <option value="Librarian">Librarian</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
                   placeholder="Last Name *"
                   name="lastName"
-                  [(ngModel)]="lastName"
+                  [(ngModel)]="lastName" required
                 />
               </div>
               <div class="form-group">
                 <input
-
+                  type="password"
                   class="form-control"
-                  placeholder="course *"
-                  name="course"
-                  [(ngModel)]="course"
+                  placeholder="Password *"
+                  name="password"
+                  [(ngModel)]="password" required
                 />
               </div>
-            </div>
-
-
               <input
                 type="submit"
-                (click)="addStudent()"
+                (click)="addUser()"
                 class="btnRegister"
-                value="Enroll"
+                value="Register"
               />
             </div>
           </div>
         </div>
-          </div>
-        </div>
-      </div><br><br><br>
-
-
+      </div>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>

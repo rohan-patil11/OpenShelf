@@ -21,7 +21,7 @@ public class Student {
 		super();
 	}
 	
-	public Student(int studentId, String firstName, String lastName, String department) {
+	public Student(int studentId, String firstName, String lastName, String department,String course) {
 		super();
 		this.studentId = studentId;
 		this.firstName = firstName;
@@ -29,7 +29,7 @@ public class Student {
 		this.course = course;
 	}
 	
-	public Student(String firstName, String lastName, String department) {
+	public Student(String firstName, String lastName, String department,String course) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;

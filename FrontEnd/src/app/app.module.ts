@@ -18,6 +18,10 @@ import { AddMultipleBooksComponent } from './components/add-multiple-books/add-m
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { AllStudentsComponent } from './components/all-students/all-students.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { AllUsersComponent } from './components/all-users/all-users.component';
+import { AddTeacherComponent } from './components/add-teacher/add-teacher.component';
+import { AllTeachersComponent } from './components/all-teachers/all-teachers.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
     AddBookComponent,
     AllStudentsComponent,
     AddStudentComponent,
+    AddUserComponent,
+    AllUsersComponent,
+    AddTeacherComponent,
+    AllTeachersComponent,
   ],
   imports: [
     BrowserModule,

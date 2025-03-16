@@ -16,11 +16,12 @@ public class StudentDao {
 	
 	@Autowired
 	SessionFactory factory;
-	public void addStudent(Student student) {
+	public Student addStudent(Student student) {
 		
 		Session session = factory.openSession();
 		session.save(student);
-		session.beginTransaction().commit();
+		session.beginTransaction().commit();		
+		return student;
 	}
 	
 	

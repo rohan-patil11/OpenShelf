@@ -22,7 +22,8 @@ public class UserServices {
 		return allUsers;
 	}
 	
-	public void addUser(User user) {
-		userDao.addUser(user);
+	public User addUser(User user) {
+		User user2 = userDao.addUser(user);
+		return user2;
 	}
 }

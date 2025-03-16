@@ -10,6 +10,10 @@ import { AddMultipleBooksComponent } from './components/add-multiple-books/add-m
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { AllStudentsComponent } from './components/all-students/all-students.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { AllUsersComponent } from './components/all-users/all-users.component';
+import { AddTeacherComponent } from './components/add-teacher/add-teacher.component';
+import { AllTeachersComponent } from './components/all-teachers/all-teachers.component';
 
 const routes: Routes = [
   {
@@ -22,7 +26,10 @@ const routes: Routes = [
     path:'home',  component:HomeComponent
   },
   {
-    path:'user', component:UserComponent
+    path:'add-user', component:AddUserComponent
+  },
+  {
+    path:'get-all-users', component:AllUsersComponent
   },
   {
     path:'add-student', component:AddStudentComponent
@@ -41,6 +48,12 @@ const routes: Routes = [
   },
   {
     path:'add-book', component:AddBookComponent
+  },
+  {
+    path:'add-teacher', component:AddTeacherComponent
+  },
+  {
+    path:'get-all-teachers', component:AllTeachersComponent
   }
 ];
 

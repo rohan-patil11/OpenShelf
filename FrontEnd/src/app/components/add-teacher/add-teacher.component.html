@@ -16,7 +16,7 @@
           role="tabpanel"
           aria-labelledby="home-tab"
         >
-          <h3 class="register-heading">Add Student</h3>
+          <h3 class="register-heading">Add Teacher</h3>
           <div class="row register-form">
             <div class="col-md-6">
               <div class="form-group">
@@ -37,21 +37,12 @@
                   [(ngModel)]="lastName"
                 />
               </div>
-              <div class="form-group">
-                <input
-
-                  class="form-control"
-                  placeholder="course *"
-                  name="course"
-                  [(ngModel)]="course"
-                />
-              </div>
             </div>
 
 
               <input
                 type="submit"
-                (click)="addStudent()"
+                (click)="addTeacher()"
                 class="btnRegister"
                 value="Enroll"
               />

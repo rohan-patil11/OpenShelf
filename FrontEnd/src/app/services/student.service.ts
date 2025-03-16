@@ -11,7 +11,7 @@ export class StudentService {
   constructor(private http:HttpClient) { }
 
  addStudent(Student:any):Observable<any>{
-  const url="http://localhost:8181/getAllStudents"
+  const url="http://localhost:8181/addStudent"
   return this.http.post(url,Student);
  }
 
