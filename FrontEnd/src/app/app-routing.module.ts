@@ -14,6 +14,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { AddTeacherComponent } from './components/add-teacher/add-teacher.component';
 import { AllTeachersComponent } from './components/all-teachers/all-teachers.component';
+import { ResumeComponent } from './developer/resume/resume.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,9 @@ const routes: Routes = [
   },
   {
     path:'get-all-teachers', component:AllTeachersComponent
+  },
+  {
+    path:'resume', component:ResumeComponent
   }
 ];
 

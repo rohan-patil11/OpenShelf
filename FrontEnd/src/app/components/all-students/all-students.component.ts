@@ -7,8 +7,11 @@ import { StudentService } from '../../services/student.service';
   styleUrls: ['./all-students.component.css']
 })
 export class AllStudentsComponent implements OnInit{
+;
+
 
   list:any;
+  searchStudent: any
   constructor(private StudentService:StudentService){
 
   }
@@ -22,4 +25,13 @@ export class AllStudentsComponent implements OnInit{
     })
   }
 
+  filteredList(){
+     if (!this.searchStudent) {
+      return this.list
+     } else {
+      return this.list.filter((student:any)=>
+        student.firstName.toLowerCase().includes(this.searchStudent.toLowerCase())
+      )
+     }
+}
 }

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
 
@@ -14,15 +16,13 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int bookId;
-	
-    @Column(name = "book_name", nullable=false)
 	String bookName;
-    
-    @Column(name = "author_name",nullable=false)
 	String authorName;
-    
-    @Column(name = "book_price",nullable=false)
 	int bookPrice;
+	
+	@OneToOne
+	@JoinColumn(name="student_id")
+	private Student student;
 	
 	public Book() {
 		super();

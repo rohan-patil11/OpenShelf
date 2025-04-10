@@ -23,10 +23,12 @@ public class TeacherDao {
 		return list;
 	}
 	
-	public void addTeacher(Teacher teacher) {
+	public Teacher addTeacher(Teacher teacher) {
 		Session session = factory.openSession();
 		session.save(teacher);
 		session.beginTransaction().commit();
+		return teacher;
+		
 	}
 
 	

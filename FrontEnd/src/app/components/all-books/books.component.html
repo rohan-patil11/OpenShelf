@@ -1,5 +1,7 @@
 <div class="container"><br>
   <h2>List Of All Books</h2>
+  <label for="SearchBook">Search Book :</label>
+  <input type="text" [(ngModel)]='searchBook' placeholder="Enter BookName"><br><br>
 <table>
   <thead>
     <tr>
@@ -10,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of list" >
+    <tr *ngFor="let item of filteredBooks()" >
       <td>{{item.bookId}}</td>
       <td>{{item.bookName}}</td>
       <td>{{item.authorName}}</td>

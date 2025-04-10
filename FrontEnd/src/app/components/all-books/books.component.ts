@@ -9,6 +9,7 @@ import { BookService } from '../../services/book.service';
 export class BooksComponent implements OnInit {
 
   list:any=''
+  searchBook: any;
   constructor(private BookService:BookService){
 
   }
@@ -20,6 +21,16 @@ export class BooksComponent implements OnInit {
     this.BookService.allbooks().subscribe((response) =>{
     this.list=response
     })
+  }
+
+  filteredBooks(){
+    if (!this.searchBook) {
+      return this.list
+    } else {
+      return this.list.filter((book:any)=>
+        book.bookName.toLowerCase().includes(this.searchBook.toLowerCase())
+    )
+    }
   }
 
 }

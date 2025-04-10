@@ -29,8 +29,9 @@ public class TeacherController {
 	
 
 	@PostMapping("addTeacher")
-	public void addTeacher(@RequestBody Teacher teacher) {
-		teacherServices.addTeacher(teacher);
+	public Teacher addTeacher(@RequestBody Teacher teacher) {
+		Teacher teacher2 = teacherServices.addTeacher(teacher);
+		return teacher2;
 	}
 	
 	@DeleteMapping("deleteTeacher/{teacherId}")

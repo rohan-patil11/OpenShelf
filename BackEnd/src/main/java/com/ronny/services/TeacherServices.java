@@ -18,8 +18,9 @@ public class TeacherServices {
 		return allTeachers;
 	}
 
-	public void addTeacher(Teacher teacher) {
-		teacherDao.addTeacher(teacher);
+	public Teacher addTeacher(Teacher teacher) {
+		Teacher teacher2 = teacherDao.addTeacher(teacher);
+		return teacher2;
 	}
 	
 	public void deleteTeacher(int teacherId) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TeacherService } from '../../services/teacher.service';
 
 @Component({
@@ -6,10 +6,13 @@ import { TeacherService } from '../../services/teacher.service';
   templateUrl: './all-teachers.component.html',
   styleUrls: ['./all-teachers.component.css']
 })
-export class AllTeachersComponent {
+export class AllTeachersComponent implements OnInit{
    list:any;
   constructor(private TeacherService:TeacherService){
 
+  }
+  ngOnInit(){
+    this.getAllTeachers();
   }
 
   getAllTeachers(){

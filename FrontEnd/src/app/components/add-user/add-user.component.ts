@@ -6,6 +6,8 @@ import { UserService } from '../../services/user.service';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
+
+
 export class AddUserComponent {
   username:any
   password:any
@@ -24,6 +26,7 @@ const User={
 	lastName:this.lastName,
 	role:this.role
 }
+
   this.UserService.addUser(User).subscribe((response)=>{
      if (response!=null) {
       alert("User Added Successfully")
