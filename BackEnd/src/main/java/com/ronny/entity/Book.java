@@ -1,6 +1,5 @@
 package com.ronny.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Component
 @Entity
@@ -22,26 +23,8 @@ public class Book {
 	
 	@OneToOne
 	@JoinColumn(name="student_id")
+	@JsonBackReference
 	private Student student;
-	
-	public Book() {
-		super();
-	}
-
-	public Book(String bookName, String authorName, int bookPrice) {
-		super();
-		this.bookName = bookName;
-		this.authorName = authorName;
-		this.bookPrice = bookPrice;
-	}
-
-	public Book(int bookId, String bookName, String authorName, int bookPrice) {
-		super();
-		this.bookId = bookId;
-		this.bookName = bookName;
-		this.authorName = authorName;
-		this.bookPrice = bookPrice;
-	}
 
 	public int getBookId() {
 		return bookId;
@@ -75,11 +58,32 @@ public class Book {
 		this.bookPrice = bookPrice;
 	}
 
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
 	@Override
 	public String toString() {
 		return "Book [bookId=" + bookId + ", bookName=" + bookName + ", authorName=" + authorName + ", bookPrice="
-				+ bookPrice + "]";
+				+ bookPrice + ", student=" + student + "]";
 	}
+
+	public Book(int bookId, String bookName, String authorName, int bookPrice, Student student) {
+		this.bookId = bookId;
+		this.bookName = bookName;
+		this.authorName = authorName;
+		this.bookPrice = bookPrice;
+		this.student = student;
+	}
+
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 

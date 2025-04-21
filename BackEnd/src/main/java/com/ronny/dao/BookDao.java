@@ -2,6 +2,7 @@ package com.ronny.dao;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -10,6 +11,7 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.ronny.entity.Book;
+import com.ronny.entity.Student;
 
 @Repository
 public class BookDao {
@@ -17,11 +19,37 @@ public class BookDao {
 	@Autowired
 	SessionFactory factory;
 	
-	public List<Book> FetchAllBooks(){
+	public List<com.ronny.dto.Book> FetchAllBooks(){
 		Session session=factory.openSession();
 		Criteria criteria = session.createCriteria(Book.class);
+		
+		
+		List<com.ronny.dto.Book> books = new ArrayList<>();
+		
 		List<Book> Booklist = criteria.list();
-		return Booklist;
+		
+		for (Book book : Booklist) {
+			
+			Student st = book.getStudent();
+			com.ronny.dto.Book b= new com.ronny.dto.Book();
+			b.setBookId(book.getBookId());
+			b.setBookName(book.getBookName());
+			b.setAuthorName(book.getAuthorName());
+			b.setBookPrice(book.getBookPrice());
+			
+			com.ronny.dto.Student studentdto = new com.ronny.dto.Student();
+			studentdto.setStudentId(st.getStudentId());
+			studentdto.setFirstName(st.getFirstName());
+			studentdto.setLastName(st.getLastName());
+			studentdto.setCourse(st.getCourse());
+			
+			b.setStudent(studentdto);
+			
+			books.add(b);
+		}
+		
+		
+		return books;
 	}	
 
 	
@@ -36,6 +64,17 @@ public class BookDao {
 		System.out.println("data saved succesfully");
 
 		return list;
+	}
+
+
+	public void AssignBook(int bookId, int studentId) {
+		Session session = factory.openSession();
+		Transaction tx = session.beginTransaction();
+		Book book = session.get(Book.class,bookId);
+		Student student = session.get(Student.class,studentId);
+		book.setStudent(student);
+		session.update(book);
+		tx.commit();
 	}
 
 }

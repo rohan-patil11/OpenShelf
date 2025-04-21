@@ -36,8 +36,8 @@ public class BookServices {
 		return b1;
 		}
 
-	public List<Book> FetchAllBooks(){
-		List<Book> listOfBooks =bookDao.FetchAllBooks();
+	public List<com.ronny.dto.Book> FetchAllBooks(){
+		List<com.ronny.dto.Book> listOfBooks =bookDao.FetchAllBooks();
 		return listOfBooks;	
 	}
 	
@@ -47,6 +47,11 @@ public class BookServices {
 		return list;
 		
 		
+	}
+
+	public void AssignBook(int bookId, int studentId) {
+		bookDao.AssignBook(bookId,studentId);
+	
 	}
 
 }

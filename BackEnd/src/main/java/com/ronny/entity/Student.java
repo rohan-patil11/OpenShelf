@@ -4,7 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Component
 @Entity
@@ -17,6 +21,19 @@ public class Student {
 	String lastName;
 	String course;
 	
+	@OneToOne(mappedBy="student")
+	@JsonManagedReference
+	private Book book;
+	
+	
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
+
 	public Student() {
 		super();
 	}

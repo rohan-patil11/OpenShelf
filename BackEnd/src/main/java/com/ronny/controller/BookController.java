@@ -35,16 +35,25 @@ public class BookController {
 	
 	
 	@GetMapping("FetchAllBooks")
-	public List<Book> FetchAllBooks() {
-		List<Book> Booklist=bookServices.FetchAllBooks();
+	public List<com.ronny.dto.Book> FetchAllBooks() {
+		List<com.ronny.dto.Book> Booklist=bookServices.FetchAllBooks();
+		for (com.ronny.dto.Book book : Booklist) {
+			System.out.println(book);
+		}
 		return Booklist;
 	}
 	
-	@Autowired
-	BookServices bookservices3;
+
 	@PostMapping("AddMultipleBooks")
 	public List<Book> AddMultipleBooks(@RequestBody List<Book> list){
 		bookServices.AddMultipleBooks(list);
 		return list;	
 	}
+	
+	@PostMapping("AssignBook/{bookId}/{studentId}")
+	public int AssignBook(@PathVariable int bookId,@PathVariable int studentId) {
+		bookServices.AssignBook(bookId,studentId);
+		return studentId;
+	}
+	
 }
