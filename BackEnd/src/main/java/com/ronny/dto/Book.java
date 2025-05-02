@@ -8,6 +8,7 @@ public class Book {
 	int bookPrice;
 	
 	Student student;
+	String assignedBook1;
 
 	public Book() {
 		super();

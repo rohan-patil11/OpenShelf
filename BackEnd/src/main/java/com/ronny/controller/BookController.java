@@ -1,6 +1,8 @@
 package com.ronny.controller;
 
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +53,11 @@ public class BookController {
 	}
 	
 	@PostMapping("AssignBook/{bookId}/{studentId}")
-	public int AssignBook(@PathVariable int bookId,@PathVariable int studentId) {
-		bookServices.AssignBook(bookId,studentId);
+	public int AssignBook(@PathVariable int bookId,@PathVariable int studentId,@RequestBody LocalDateTime assignedBook) {
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		String assignedBook1 = assignedBook.format(format);
+		
+		bookServices.AssignBook(bookId,studentId, assignedBook1);
 		return studentId;
 	}
 	

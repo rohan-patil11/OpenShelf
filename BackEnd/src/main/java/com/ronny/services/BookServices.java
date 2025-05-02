@@ -1,5 +1,6 @@
 package com.ronny.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -49,8 +50,8 @@ public class BookServices {
 		
 	}
 
-	public void AssignBook(int bookId, int studentId) {
-		bookDao.AssignBook(bookId,studentId);
+	public void AssignBook(int bookId, int studentId,String assignedBook1) {
+		bookDao.AssignBook(bookId,studentId,assignedBook1);
 	
 	}
 

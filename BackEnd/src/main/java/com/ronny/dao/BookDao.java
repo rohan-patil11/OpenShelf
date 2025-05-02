@@ -2,6 +2,7 @@ package com.ronny.dao;
 
 
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -67,11 +68,12 @@ public class BookDao {
 	}
 
 
-	public void AssignBook(int bookId, int studentId) {
+	public void AssignBook(int bookId, int studentId,String assignedBook1) {
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
 		Book book = session.get(Book.class,bookId);
 		Student student = session.get(Student.class,studentId);
+		student.setAssignedBook(assignedBook1);
 		book.setStudent(student);
 		session.update(book);
 		tx.commit();

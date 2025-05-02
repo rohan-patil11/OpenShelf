@@ -10,7 +10,8 @@
       <th>Author Name</th>
       <th>Book Price</th>
       <th>Assign</th>
-      <th>Assigned Student Name</th>
+      <th>Student ID</th>
+      <th>Student Name</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,7 @@
         <button class="btn btn-primary" (click)="assignBook(item.bookId,item.studentId)">Assign</button> -->
       </td>
       <td>{{item.student.studentId}}</td>
+      <td>{{(item.student.firstName+' '+item.student.lastName).toUpperCase()}}</td>
     </tr>
   </tbody>
 </table>

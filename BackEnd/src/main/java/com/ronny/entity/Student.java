@@ -1,5 +1,8 @@
 package com.ronny.entity;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +23,7 @@ public class Student {
 	String firstName;
 	String lastName;
 	String course;
+	String assignedBook;
 	
 	@OneToOne(mappedBy="student")
 	@JsonManagedReference
@@ -92,4 +96,14 @@ public class Student {
 	public void setCourse(String course) {
 		this.course = course;
 	}
+
+	public String getAssignedBook() {
+		return assignedBook;
+	}
+
+	public void setAssignedBook(String assignedBook) {
+		this.assignedBook = assignedBook;
+	}
+
+	
 }
